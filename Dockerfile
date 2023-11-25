@@ -70,6 +70,7 @@ RUN apt-get upgrade -y
 
 COPY resources/install_wine.sh /t6server/install_wine.sh 
 RUN chmod +x /t6server/install_wine.sh 
+# [TODO] Run installer of the script in the server-launch.sh
 RUN bash /t6server/install_wine.sh  && rm /t6server/install_wine.sh 
 
 
