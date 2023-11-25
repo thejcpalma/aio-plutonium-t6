@@ -13,6 +13,7 @@ else
 	exit 1
 fi
 
+# Check if the latest updater is the same as the current updater
 if cmp -s "$UPDATER_DIRECTORY/latestupdater.tar.gz" "$UPDATER_DIRECTORY/updater.tar.gz"; then
 	echo "Latest updater already downloaded!"
 	rm -f $UPDATER_DIRECTORY/latestupdater.tar.gz
@@ -25,7 +26,7 @@ else
 	rm -f $UPDATER_DIRECTORY/plutonium-updater
 fi
 
-
+# Check if the updater is already extracted, if not extract it
 if [ -e $STATUS_DIRECTORY/.updater_extracted ]; then
 	echo "Updater already extracted!"
 else
