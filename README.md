@@ -1,4 +1,4 @@
-# AIO-plutonium-t6 [A all-in-one plutonium server, Easier]
+# AIO-plutonium-t6 [An all-in-one plutonium server, Easier]
 
 [![build images](https://github.com/thejcpalma/AIO-plutonium-t6-server-docker-setup/actions/workflows/docker-images.yml/badge.svg?branch=main)](https://github.com/thejcpalma/AIO-plutonium-t6-server-docker-setup/actions/workflows/docker-images.yml)
 
@@ -149,41 +149,41 @@ Now you should be able to visit IW4Admin in your browser via `http://hostname:16
 
 The following is a list of all the environment variables that will break your server if you change them.
 
-> ** :warning: PROCEED WITH CAUTION :warning: **
+>  :warning: **PROCEED WITH CAUTION** :warning:
 
 **Directories Environment Variables:**
 
-| **Environment Variable**    | **Default Value**              |
-|-----------------------------|--------------------------------|
-| `PLUTONIUM_DIRECTORY`       | "/t6server/plutonium"          |
-| `SERVER_DIRECTORY`          | "/t6server/server"             |
-| `IW4ADMIN_DIRECTORY`        | "/t6server/admin"              |
-| `UPDATER_DIRECTORY`         | "/t6server/updater"            |
-| `DOWNLOAD_DIRECTORY`        | "/t6server/downloaded_files"   |
-| `STATUS_DIRECTORY`          | "/t6server/status"             |
+| **Environment Variable**    | **Default Value**            |
+|-----------------------------|------------------------------|
+| `PLUTONIUM_DIRECTORY`       | /t6server/plutonium          |
+| `SERVER_DIRECTORY`          | /t6server/server             |
+| `IW4ADMIN_DIRECTORY`        | /t6server/admin              |
+| `UPDATER_DIRECTORY`         | /t6server/updater            |
+| `DOWNLOAD_DIRECTORY`        | /t6server/downloaded_files   |
+| `STATUS_DIRECTORY`          | /t6server/status             |
 
 **Wine Environment Variables**
 
-| **Environment Variable**    | **Default Value**              |
-|-----------------------------|--------------------------------|
-| `WINEPREFIX`                | "/root/.wine"                  |
-| `WINEDEBUG`                 | "fixme-all"                    |
-| `WINEARCH`                  | "win64"                        |
+| **Environment Variable**    | **Default Value**            |
+|-----------------------------|------------------------------|
+| `WINEPREFIX`                | /root/.wine                  |
+| `WINEDEBUG`                 | fixme-all                    |
+| `WINEARCH`                  | win64                        |
 
 ### Changeable Environment Variables
 
 The following is a list of all the environment variables that you can change.
 
-| **Environment Variable**    | **Default Value**                 | **Description**                                                                                                  |
-|-----------------------------|-----------------------------------|------------------------------------------------------------------------------------------------------------------|
-| `SERVER_KEY`                | "your_plutonium_server_key_here"  | Your server key from [Plutonium](https://plutonium.pw).                                                          |
-| `SERVER_PORT`               | "4976"                            | The port your game server will run on (game server protocol must be UDP).                                        |
-| `SERVER_MODE`               | "Zombie"                          | The mode your game server will run on. Either `Zombie` or `Multiplayer` (any other value defaults to `Zombie`).  |
-| `LAN_MODE`                  | "false"                           | Set to `true` to enable LAN mode (Any other value will disable LAN mode).                                        |
-| `SERVER_MAX_CLIENTS`        | ""                                | The maximum number of clients allowed on your server. Between `1-8` (Leave blank for default, which is `4`).     |
-| `SERVER_MAP_ROTATION`       | ""                                | String to set the map rotation. (Leave blank for default).                                                       |
-| `SERVER_RCON_PASSWORD`      | "admin"                           | The password for your server's RCON. (Leave blank for default, which is `admin`).                                |
-| `ADMIN_PORT`                | "1624"                            | The port your admin panel will run on (admin panel protocol must be TCP).                                        |
+| **Environment Variable**    | **Default Value**               | **Description**                                                                                                  |
+|-----------------------------|---------------------------------|------------------------------------------------------------------------------------------------------------------|
+| `SERVER_KEY`                | your_plutonium_server_key_here  | Your server key from [Plutonium](https://plutonium.pw).                                                          |
+| `SERVER_PORT`               | 4976                            | The port your game server will run on (game server protocol must be UDP).                                        |
+| `SERVER_MODE`               | Zombie                          | The mode your game server will run on. Either `Zombie` or `Multiplayer` (any other value defaults to `Zombie`).  |
+| `LAN_MODE`                  | false                           | Set to `true` to enable LAN mode (Any other value will disable LAN mode).                                        |
+| `SERVER_MAX_CLIENTS`        |                                 | The maximum number of clients allowed on your server. Between `1-8` (Leave blank for default, which is `4`).     |
+| `SERVER_MAP_ROTATION`       |                                 | String to set the map rotation. (Leave blank for default).                                                       |
+| `SERVER_RCON_PASSWORD`      | admin                           | The password for your server's RCON. (Leave blank for default, which is `admin`).                                |
+| `ADMIN_PORT`                | 1624                            | The port your admin panel will run on (admin panel protocol must be TCP).                                        |
 
 * `SERVER_MAP_ROTATION`
 
@@ -218,8 +218,8 @@ Projects used in this repository:
 - [xerxes-at](https://github.com/xerxes-at)/[T6ServerConfigs](https://github.com/xerxes-at/T6ServerConfigs) for the server configuration files.
 
 
-**The true heroes of this repository:**
+:fireworks: **The true heroes of this repository:** :fireworks:
 - [GaryCraft](https://github.com/GaryCraft)/[ptero-plutonium](https://github.com/GaryCraft/ptero-plutonium)
 - [rexlManu](https://github.com/rexlManu)/[t6server-docker-setup](https://github.com/rexlManu/t6server-docker-setup)
 
-Without their repositories, this repository would not exist. So thank you very much for your work. :heart:
+*Without their repositories, this repository would not exist. So thank you very much for your work.* :heart:
