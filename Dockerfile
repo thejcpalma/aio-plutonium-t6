@@ -2,6 +2,10 @@ FROM ubuntu:jammy
 
 LABEL author="João Carlos Palma"
 
+
+################################################################################
+#                             Environment Variables                            #
+################################################################################
 ENV PLUTONIUM_DIRECTORY="/t6server/plutonium"
 ENV SERVER_DIRECTORY="/t6server/server"
 ENV IW4ADMIN_DIRECTORY="/t6server/admin"
@@ -25,7 +29,19 @@ ENV SERVER_MAP_ROTATION=""
 ENV ADMIN_PORT="1624"
 
 
+################################################################################
+#                               Exposing Ports                                 #
+################################################################################
 
+EXPOSE $SERVER_PORT/udp
+EXPOSE $ADMIM_PORT/tcp
+
+
+################################################################################
+#                            Container Provisioning                            #
+################################################################################
+
+# Create needed directories
 RUN mkdir -p $PLUTONIUM_DIRECTORY \
 			 $SERVER_DIRECROTY \
 			 $IW4ADMIN_DIRECTORY \
@@ -36,7 +52,7 @@ RUN mkdir -p $PLUTONIUM_DIRECTORY \
 # Update the system
 RUN apt-get update
 
-# Installing packages
+# Installing needed packages
 RUN apt-get install -y \
 	wget \
 	curl \
@@ -52,6 +68,10 @@ RUN apt-get install -y \
 	aspnetcore-runtime-6.0 \
 	avahi-daemon \
 	avahi-utils
+
+# Update the system
+RUN apt-get upgrade -y
+
 
 ################################################################################
 #                               Installing WINE                                #
@@ -81,8 +101,11 @@ RUN wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-p
   rm packages-microsoft-prod.deb
 
 
+################################################################################
 
-# Prepare launch
+
+
+# Prepare server launch
 WORKDIR /t6server
 COPY resources/server-launch.sh .
 RUN chmod +x server-launch.sh
