@@ -6,11 +6,12 @@ name: Docker Build and Publish
 # documentation.
 
 on:
-  schedule:
-    - cron: '21 5 * * 0'
+  #schedule:
+  #  - cron: '21 5 * * 0'
   push:
-    branches: [ "main" ]
+    #branches: [ "main" ]
     # Publish semver tags as releases.
+    # Only run job if on tags and if the tag matches pattern.
     tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ "main" ]

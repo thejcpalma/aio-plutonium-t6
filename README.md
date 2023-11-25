@@ -1,6 +1,6 @@
-# AIO-plutonium-t6 [An all-in-one plutonium server, Easier]
+# AIO-Plutonium-T6 [An all-in-one plutonium server, Easier]
 
-[![build images](https://github.com/thejcpalma/AIO-plutonium-t6-server-docker-setup/actions/workflows/docker-images.yml/badge.svg?branch=main)](https://github.com/thejcpalma/AIO-plutonium-t6-server-docker-setup/actions/workflows/docker-images.yml)
+[![Docker Image Build](https://github.com/thejcpalma/aio-plutonium-t6/actions/workflows/docker-image.yml/badge.svg?branch=main)](https://github.com/thejcpalma/aio-plutonium-t6/actions/workflows/docker-image.yml/badge.svg?branch=main) [![Docker Build and Publish](https://github.com/thejcpalma/aio-plutonium-t6/actions/workflows/docker-publish.yml/badge.svg?branch=main)](https://github.com/thejcpalma/aio-plutonium-t6/actions/workflows/docker-publish.yml)
 
 Files Used to Build and run a [Plutonium](https://plutonium.pw) Server and a [IW4Admin](https://github.com/RaidMax/IW4M-Admin) Panel in docker
 
