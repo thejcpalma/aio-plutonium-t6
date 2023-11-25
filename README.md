@@ -1,4 +1,4 @@
-# AIO-Plutonium-T6 [An all-in-one plutonium server, Easier]
+# [AIO-Plutonium-T6](https://github.com/thejcpalma/aio-plutonium-t6) [An all-in-one plutonium server, Easier]
 
 [![Docker Image Build](https://github.com/thejcpalma/aio-plutonium-t6/actions/workflows/docker-image.yml/badge.svg?branch=main)](https://github.com/thejcpalma/aio-plutonium-t6/actions/workflows/docker-image.yml/badge.svg?branch=main) [![Docker Build and Publish](https://github.com/thejcpalma/aio-plutonium-t6/actions/workflows/docker-publish.yml/badge.svg?branch=main)](https://github.com/thejcpalma/aio-plutonium-t6/actions/workflows/docker-publish.yml)
 
