@@ -10,11 +10,11 @@ This is intended to make hosting a ~lan~ server easier and faster, removing the 
 
 This Repository is a work in progress state, so if you think there's an improvement to be made please contribute in the Issues Tab
 
-- Currently this repository is only tested in Linux, but it should work in any system able to run Docker.
+- Currently this repository is only tested in Linux and Windows, but it should work in any system able to run Docker.
 
-- It's also only tested in a LAN environment, but it should work in a WAN environment as well.
+- It's also only tested in a LAN environment (which can be accessed externally, for example, with a reverse proxy), but it should work in a WAN environment as well.
 
-- And it's only tested with the Zombie mode, but it should work with the Multiplayer mode as well.
+- And it's only tested with the Zombie mode, but it should work with the Multiplayer mode as well (hopefully).
 
 > Don't quote me on the statements above :sweat_smile:
 
@@ -46,7 +46,7 @@ For easier setup, we use the name `aio-plutonium-t6` for the volume:
 docker volume remove aio-plutonium-t6 || true && \
 docker volume create aio-plutonium-t6
 ```
-> **Note:** We first remove the volume if it exists, to avoid any errors. Be carefil when using this command, as it will remove any data stored in the volume.
+> **Note:** We first remove the volume if it exists, to avoid any errors. Be careful when using this command, as it will remove any data stored in the volume.
 
 
 ### 2. Launching the server
@@ -209,6 +209,7 @@ Here the default value is `1624`, but you can change it to whatever you want, as
 
 So if you mapped the port `1625` in the `-p <admin_panel_host_port>:1625/tcp` parameter, you must change the `ADMIN_PORT` environment variable to `1625` as well.
 
+
 ## Credits
 
 Projects used in this repository:
@@ -223,3 +224,12 @@ Projects used in this repository:
 - [rexlManu](https://github.com/rexlManu)/[t6server-docker-setup](https://github.com/rexlManu/t6server-docker-setup)
 
 *Without their repositories, this repository would not exist. So thank you very much for your work.* :heart:
+
+
+## TODO List
+
+ - [ ] Add env to shell script for the server password
+ - [ ] Fix README.md/Documentation with more links and useful information
+ - [ ] Reduce clutter on dockerfile (apt update, ...)
+ - [ ] Isolate installation scripts into separate files (like the updater and the wine installation)
+ 
