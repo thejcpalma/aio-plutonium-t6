@@ -64,7 +64,8 @@ docker run -d --name <container_name> \
               -e SERVER_KEY="<your_plutonium_server_key>" \
               -e SERVER_RCON_PASSWORD="<rcon_password>" \
               -e SERVER_MAX_CLIENTS="<max_clients>" \
-              -e SERVER_MODE="<server_mode>"
+              -e SERVER_MODE="<server_mode>" \
+              -e SERVER_PASSWORD="<server_password>"
 ```
 
 An example of a full command to launch the Zombies server in online mode is:
@@ -75,7 +76,8 @@ docker run -d --name aio-plutonium-t6-server \
               -v aio-plutonium-t6:/t6server \
               -e SERVER_KEY="aFb57Hkbe" \
               -e SERVER_RCON_PASSWORD="admin" \
-              -e SERVER_MAX_CLIENTS="7"
+              -e SERVER_MAX_CLIENTS="7" \
+              -e SERVER_PASSWORD="1234"
 ```
 > **Note:** The key is completely random on this example, you should use your own key from [Plutonium](https://plutonium.pw).
 
@@ -89,7 +91,8 @@ docker run -d --name <container_name> \
               -e SERVER_RCON_PASSWORD="<rcon_password>" \
               -e SERVER_MAX_CLIENTS="<max_clients>" \
               -e SERVER_MAP_ROTATION='<map_rotation_string>' \
-              -e SERVER_MODE="<server_mode>"
+              -e SERVER_MODE="<server_mode>" \
+              -e SERVER_PASSWORD="<server_password>"
 ```
 
 An example of a full command to launch the Zombies server in LAN mode is:
@@ -101,21 +104,24 @@ docker run -d --name aio-plutonium-t6-server \
               -e LAN_MODE="true" \
               -e SERVER_RCON_PASSWORD="admin" \
               -e SERVER_MAX_CLIENTS="8" \
-              -e SERVER_MAP_ROTATION='sv_maprotation "exec zm_classic_transit.cfg map zm_transit"'
+              -e SERVER_MAP_ROTATION='sv_maprotation "exec zm_classic_transit.cfg map zm_transit"' \
+              -e SERVER_PASSWORD="1234"
 ```
 
 
 Breakdown of the parameters used in the `docker run` command:
 
-| **Parameter**                               | **Function**                                                                                                                                                 |
-|---------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `--name <container_name>`                   | Set container name.                                                                                                                                          |
-| `-v <volume_name>:/t6server`                | Map docker volume <volume_name> to directory `/t6server` keep the files persistent between restarts.                                                         |
-| `-p <game_server_host_port>:4976/udp`       | Map game server port (host:guest/protocol). Game server protocol must be UDP. Don't change guest port unless you change `SERVER_PORT` environment variable.  |
-| `-p <admin_panel_host_port>:1624/tcp`       | Map admin panel port (host:guest/protocol). Admin panel protocol must be TCP. Don't change guest port unless you change `ADMIN_PORT` environment variable.   |
-| `-e LAN_MODE="true"`                        | Set to `true` to enable LAN mode (Any other value will disable LAN mode).                                                                                    |
-| `-e SERVER_MAX_CLIENTS="<max_clients>"`     | The maximum number of clients allowed on your server. Between `1-8` (Leave blank for default, which is `4`).                                                 |
-| `-e SERVER_RCON_PASSWORD="<rcon_password>"` | The password for your server's RCON. (Leave blank for default, which is `admin`).                                                                            |
+| **Parameter**                                    | **Function**                                                                                                                                                 |
+|--------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--name <container_name>`                        | Set container name.                                                                                                                                          |
+| `-v <volume_name>:/t6server`                     | Map docker volume <volume_name> to directory `/t6server` keep the files persistent between restarts.                                                         |
+| `-p <game_server_host_port>:4976/udp`            | Map game server port (host:guest/protocol). Game server protocol must be UDP. Don't change guest port unless you change `SERVER_PORT` environment variable.  |
+| `-p <admin_panel_host_port>:1624/tcp`            | Map admin panel port (host:guest/protocol). Admin panel protocol must be TCP. Don't change guest port unless you change `ADMIN_PORT` environment variable.   |
+| `-e LAN_MODE="true"`                             | Set to `true` to enable LAN mode (Any other value will disable LAN mode).                                                                                    |
+| `-e SERVER_MAX_CLIENTS="<max_clients>"`          | The maximum number of clients allowed on your server. Between `1-8` (Leave blank for default, which is `4`).                                                 |
+| `-e SERVER_RCON_PASSWORD="<rcon_password>"`      | The password for your server's RCON. (Leave blank for default, which is `admin`).                                                                            |
+| `-e SERVER_MAP_ROTATION='<map_rotation_string>'` | String to set the map rotation. (Leave blank for default).                                                                                                   |
+| `-e SERVER_PASSWORD="<server_password>"`         | The password for your server.                                                                                                                                |
 
 
 
@@ -183,6 +189,7 @@ The following is a list of all the environment variables that you can change.
 | `SERVER_MAX_CLIENTS`        |                                 | The maximum number of clients allowed on your server. Between `1-8` (Leave blank for default, which is `4`).     |
 | `SERVER_MAP_ROTATION`       |                                 | String to set the map rotation. (Leave blank for default).                                                       |
 | `SERVER_RCON_PASSWORD`      | admin                           | The password for your server's RCON. (Leave blank for default, which is `admin`).                                |
+| `SERVER_PASSWORD`           |                                 | The password for your server. (No password is the default value).                                                |
 | `ADMIN_PORT`                | 1624                            | The port your admin panel will run on (admin panel protocol must be TCP).                                        |
 
 * `SERVER_MAP_ROTATION`
@@ -228,7 +235,7 @@ Projects used in this repository:
 
 ## TODO List
 
- - [ ] Add env to shell script for the server password
+ - [x] Add env to shell script for the server password
  - [ ] Fix README.md/Documentation with more links and useful information
  - [ ] Reduce clutter on dockerfile (apt update, ...)
  - [ ] Isolate installation scripts into separate files (like the updater and the wine installation)

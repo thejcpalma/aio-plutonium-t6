@@ -269,6 +269,13 @@ if [ ! -z "$SERVER_MAP_ROTATION" ] && [ ! -e $STATUS_DIRECTORY/.server_config_fi
     touch $STATUS_DIRECTORY/.server_config_file_zm_map_rotation_modified
 fi
 
+# Set server password
+if [ ! -z "$SERVER_PASSWORD" ] && [ ! -e $STATUS_DIRECTORY/.server_config_file_password_modified ]; then
+    echo "Setting server password to: '$SERVER_PASSWORD'"
+    sed -i "s/\(g_password \)\"[^\"]*\"/\1\"$SERVER_PASSWORD\"/" "$CFG_PATH"
+    touch $STATUS_DIRECTORY/.server_config_file_password_modified
+fi
+
 
 ################################################################################
 #                             IW4Admin Provisioning                            #
