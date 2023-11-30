@@ -133,12 +133,12 @@ We still need to run the initial setup for the admin panel, so we can access it 
 
 To do this, we need to attach to the `admin-panel` screen process inside the container, and run the initial setup:
 ```bash
-docker exec -it --entrypoint /bin/bash <container_name> -c "screen -r admin-panel"
+docker exec -it <container_name> /bin/bash -c "screen -r admin-panel"
 ```
 
 An example of a full command to attach to the `admin-panel` screen process is:
 ```bash
-docker exec -it --entrypoint /bin/bash aio-plutonium-t6-server -c "screen -r admin-panel"
+docker exec -it aio-plutonium-t6-server /bin/bash -c "screen -r admin-panel"
 ```
 
 Now we are inside the `admin-panel` screen process, and we shall follow [IW4Admin's initial configuration](https://github.com/RaidMax/IW4M-Admin/wiki/Configuration).
